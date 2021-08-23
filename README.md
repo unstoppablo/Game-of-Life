@@ -12,7 +12,7 @@ Written using docker container, compile with g++. Originally written for a Data 
 
 **How to run:**
 - Attach to required docker container to assure computer architecture is compatible, compile with "g++ *.cpp".
-- You will select random upon the appearance of the prompt, which will randomly populate a grid.
+- You will be prompted to enter number of rows, columns, and population density. From there, the grid will be randomly populated.
 - You will then select the boundary mode of the game (normal, mirror, donut).
 - Upon the calculation of each generation, the grid will be outputted as a text grid.
 - You can select 'Enter' to display the next generation or 'Pause' to briefly pause program.
