@@ -92,42 +92,58 @@ int Grid::generateNumbers(int maxNum) {
 
 
 //Populate the 2D array given the population density
-void Grid::populateGrid() {
-  srand(time(NULL)); //initializes the random number generator
-  int totalCount = row * column;
-  int numCells = totalCount * popDensity;
+void Grid::populateGrid() 
+{
+    srand(time(NULL)); //initializes the random number generator
+    int totalCount = row * column;
+    int numCells = totalCount * popDensity;
 
-  int count = 0;
-  int r, c = 0;
+    int count = 0;
+    int r, c = 0;
 
-  while (count < numCells) {
-    r = generateNumbers(row);
-    c = generateNumbers(column);
+    while (count < numCells) {
+        r = generateNumbers(row);
+        c = generateNumbers(column);
 
-    if (myGrid[r][c].getStatus() == 'x') {
-      r = (++r) % row;
-      c = (++c) % column;
+        if (myGrid[r][c].getStatus() == 'x') {
+        r = (++r) % row;
+        c = (++c) % column;
 
-      if (myGrid[r][c].getStatus() == 'x') {
-        continue;
-      }
+        if (myGrid[r][c].getStatus() == 'x') {
+            continue;
+        }
+        }
+        myGrid[r][c].setStatus('x');
+        count++;
     }
-    myGrid[r][c].setStatus('x');
-    count++;
-  }
 }
 
-void Grid::printGrid() {
-
-  cout << "Generation: " << genCount << endl;
-  genCount += 1;
-
-  for (int i = 0; i < row; ++i) {
-    for (int j = 0; j < column; ++j) {
-      cout << myGrid[i][j].getStatus();
+void Grid::printGrid() 
+{
+    int numAlive = 0;
+    for (int i = 0; i < row; ++i) 
+    {
+        for (int j = 0; j < column; ++j) 
+        {
+            if (myGrid[i][j].getStatus() == 'x')
+            {
+                numAlive += 1;
+            }
+        }
     }
-    cout << "\n";
-  }
+
+    cout << "Generation: " << genCount << ", " << "Cells alive: " << numAlive << endl;
+    genCount += 1;
+
+
+    for (int i = 0; i < row; ++i) 
+    {
+        for (int j = 0; j < column; ++j) 
+        {
+            cout << myGrid[i][j].getStatus() << "  ";
+        }
+        cout << "\n";
+    }
 }
 
 
