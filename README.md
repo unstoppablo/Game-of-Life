@@ -17,3 +17,7 @@ Written using docker container, compile with g++. Originally written for a Data 
 - You will then select the boundary mode of the game (normal, mirror, donut).
 - Upon the calculation of each generation, the grid will be outputted as a text grid.
 - The program will stop of the grid either stabilizes or becomes empty. If the simulation is infinite, it will keep running.
+
+Example of output and end of game (cells died out) (initial conditions: 10 rows, 10 columns, 0.1 population density):
+<img width="220" alt="Screen Shot 2021-08-23 at 11 26 06 PM" src="https://user-images.githubusercontent.com/66883135/130567220-7eeb8570-3e46-4913-80c5-13fcac2c3b21.png">
+
