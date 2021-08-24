@@ -1,5 +1,5 @@
 # Game-of-Life
-Conway's famous game of life, an automata of cellular generations (Game modes: normal, donut, mirror). A simulation modelling the life cycle of cells.
+Conway's famous game of life, an automata of cellular generations. A simulation modelling the life cycle of cells.
 
 Written using docker container, compile with g++. Originally written for a Data Structures assignment, modified and improved to add more features.
 
